@@ -1,6 +1,6 @@
 ## Adding income function
 def addIncome(budget_data):
-   """Adds a new income to the db"""
+    """Adds a new income to the db"""
     while True:
         try:
             print("\n=== ADD NEW INCOME ===\n")
@@ -11,17 +11,21 @@ def addIncome(budget_data):
                 print("="*80+"\n\n")
                 continue
 
-            inputIncomeDescription = float(input("Enter Income Description:\n> "))
+            inputIncomeDescription = input("Enter Income Description:\n> ")
             if not inputIncomeDescription.strip():
                 print("\n"+"="*80)
                 print("❌ Error: Income Description cannot be empty")
                 print("="*80+"\n\n")
                 continue    
 
-            budget_data["transactions"].append({"type": "income","amount": str(inputIncomeAmount),"description": inputIncomeDescription})
+            # Add transaction
+            budget_data["transactions"].append({"type": "income","amount": inputIncomeAmount,"description": inputIncomeDescription
+            })
             budget_data["balance"] += inputIncomeAmount
+
+            # Success message
             print("\n"+"="*80)
-            print(f"✅ SUCCESS: You added ₪'{inputIncomeAmount}' to your INCOME with the description of '{inputIncomeDescription}'")
+            print(f"✅ SUCCESS: You added ₪ {inputIncomeAmount} to your INCOME with the description of '{inputIncomeDescription}'")
             print("="*80+"\n\n")
             
             # Add menu options after operation
@@ -31,7 +35,7 @@ def addIncome(budget_data):
             
             action = int(input("> "))
             if action == 1:
-                continue  # Back to add another product
+                continue  # Back to add another income
             elif action == 2:
                 return budget_data  # Back to main menu
             elif action == 3:
@@ -67,6 +71,7 @@ def addIncome(budget_data):
     
     return budget_data
 
+
 ## Adding expense function
 def addExpense(budget_data):
     """Adds a new expense to the db"""
@@ -80,17 +85,26 @@ def addExpense(budget_data):
                 print("="*80+"\n\n")
                 continue
 
-            inputExpenseDescription = float(input("Enter Expense Description:\n> "))
+            inputExpenseDescription = input("Enter Expense Description:\n> ")
             if not inputExpenseDescription.strip():
                 print("\n"+"="*80)
                 print("❌ Error: Expense Description cannot be empty")
                 print("="*80+"\n\n")
                 continue    
 
+            # Subtract the expense amount from the balance
             budget_data["balance"] -= inputExpenseAmount
-            budget_data["transactions"].append({"type": "expense","amount": str(inputExpenseAmount),"description": inputExpenseDescription})
+
+            # Add the expense transaction to the list
+            budget_data["transactions"].append({
+                "type": "expense",
+                "amount": str(inputExpenseAmount),
+                "description": inputExpenseDescription
+            })
+
+            # Success message
             print("\n"+"="*80)
-            print(f"✅ SUCCESS: You added ₪'{inputExpenseAmount}' to your EXPENSE with the description of '{inputExpenseDescription}'")
+            print(f"✅ SUCCESS: You added ₪ {inputExpenseAmount} to your EXPENSE with the description of '{inputExpenseDescription}'")
             print("="*80+"\n\n")
             
             # Add menu options after operation
@@ -100,7 +114,7 @@ def addExpense(budget_data):
             
             action = int(input("> "))
             if action == 1:
-                continue  # Back to add another product
+                continue  # Back to add another expense
             elif action == 2:
                 return budget_data  # Back to main menu
             elif action == 3:

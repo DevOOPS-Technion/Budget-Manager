@@ -29,7 +29,7 @@ def exitMenu():
 def displayMenu():
     """Display the main menu options"""
     print("\n"+"="*40)
-    print(f"|| Leumi Budget Manager (v{version}) ||")
+    print(f"||     Leumi Budget Manager (v{version})    ||")
     print("="*40+"\n")
     print("| 1 | Add Income")
     print("| 2 | Add Expense")
