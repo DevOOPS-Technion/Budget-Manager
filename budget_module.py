@@ -179,6 +179,11 @@ def showBalance(budget_data):
             print("Invalid input. Please enter a number.")
 
 
+# Show show_balance function by Daniel Berliant
+def show_balance(budget_data: dict) -> dict:
+    return budget_data["balance"]
+
+
 def printTransactionHistory(budget_data):
     # Calculate minimum padding for columns
     maxTypePad = max(max(len(transaction["type"]) for transaction in budget_data["transactions"]), 7) if budget_data["transactions"] else 7
