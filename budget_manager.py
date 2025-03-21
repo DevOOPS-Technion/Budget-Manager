@@ -60,9 +60,12 @@ def mainMenuHandler():
             case 2: 
                 continue_program = addExpense(budget_data)
             case 3: 
-                continue_program = showBalance(budget_data)
+                #continue_program = showBalance(budget_data)
+                show_current_balance = show_balance(budget_data)
+                print(f"The current balance is: {show_current_balance}")
             case 4:  
                 continue_program = showTransactionHistory(budget_data)
+                print(continue_program)
             case 5:
                 print("\nExiting program. Goodbye!")
                 break
