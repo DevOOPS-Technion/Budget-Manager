@@ -49,9 +49,7 @@ def mainMenuHandler():
         try:
             choice = int(input("\n> "))
         except ValueError:
-            print("\n"+"="*80)
             print("❌ Error: Invalid input.")
-            print("="*80+"\n\n")
             continue
         
         # Process user choice
@@ -69,9 +67,7 @@ def mainMenuHandler():
                 print("\nExiting program. Goodbye!")
                 break
             case _:  # Default case for invalid choices
-                print("\n"+"="*80)
-                print("❌ Error: Invalid input.\nPlease enter a number between 1 and 6.")
-                print("="*80+"\n\n")
+                print("❌ Error: Invalid input.\nPlease enter a number between 1 and 5.")
         # Check if we should exit the program
         if not continue_program:
             break
