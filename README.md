@@ -1,4 +1,7 @@
-# Leumi Budget Manager
+
+<p align=center><img src="https://i.ibb.co/6RpL30Vr/channels4-profile.png" alt="drawing" width="200"/>
+
+## Leumi Budget Manager
 
 A simple command-line budget management application that helps you track your income, expenses, and overall balance.
 
@@ -50,9 +53,8 @@ budget_data = {
 ## Code Structure
 
 The program consists of several modules:
-
-- `main.py`: Contains the main program loop and menu interface
-- `budget_module.py`: Contains the core data structure and transaction functions
+- [```budget_manager.py```](https://github.dev/DevOOPS-Technion/Budget-Manager/blob/main/budget_manager.py) *(Contains the main menu interface and data structure)*
+- [```budget_module.py```](https://github.dev/DevOOPS-Technion/Budget-Manager/blob/main/budget_module.py) *(Contains the transaction functions)*
 
 The main functionality is organized into separate functions:
 - `displayMenu()`: Shows the user interface options
@@ -68,4 +70,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Contact
 
-Feel free to contact me about this via email: `alex.ivanov@campus.technion.ac.il`
+Feel free to contact me about this via email:  alex.ivanov@campus.technion.ac.il
